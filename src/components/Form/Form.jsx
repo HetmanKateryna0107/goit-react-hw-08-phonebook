@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectContacts } from 'redax/selectors';
 import { addContacts } from 'redax/operations';
-import { nanoid } from '@reduxjs/toolkit';
 
 export default function Form() {
   const [name, setName] = useState('');
@@ -20,7 +19,7 @@ export default function Form() {
       alert(`${name} already exists`);
       return;
     }
-    dispatch(addContacts({ name, phone: number, id: nanoid() }));
+    dispatch(addContacts({ name, number }));
     setName('');
     setNumber('');
   };

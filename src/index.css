@@ -17,9 +17,10 @@ code {
 body {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 input {
-  margin-right: 20px;
+  margin: 20px;
 }
 button {
   font-weight: 500;
@@ -28,6 +29,6 @@ button {
   display: inline-block;
   padding: 6px 10px;
   border: solid 1px;
-  background-color: rgb(169, 135, 194);
+  background-color: rgb(98, 200, 124);
   border-radius: 30px;
 }
