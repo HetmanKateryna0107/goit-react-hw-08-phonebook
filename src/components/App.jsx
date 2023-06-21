@@ -8,6 +8,7 @@ import { PublicRout } from './PublicRout/PublicRout';
 import { useEffect } from 'react';
 import { getUser, logOut } from 'redax/auth/authOperation';
 import { Phonebook } from 'pages/Contacts';
+import UserMenu from './UserMenu';
 // import { token } from 'redax/http';
 
 export default function App() {
@@ -20,18 +21,10 @@ export default function App() {
     }
   }, [isAuth, dispatch]);
 
-  const handleLogOut = () => {
-    dispatch(logOut());
-  };
   return (
     <>
       {isAuth ? (
-        <div>
-          <p>mango@mail.com</p>
-          <button type="button" onClick={handleLogOut}>
-            Logout
-          </button>
-        </div>
+        <UserMenu />
       ) : (
         <nav>
           <Link to={'/login'}>Login </Link>

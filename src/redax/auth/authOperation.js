@@ -1,12 +1,12 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { privatApi, publicApi, token } from 'redax/http';
+import { privatApi, token } from 'redax/http';
 import { selectToken } from './authSelector';
 
 export const login = createAsyncThunk(
   'auth/login',
   async (body, { rejectWithValue }) => {
     try {
-      const response = await publicApi.post('/users/login', body);
+      const response = await privatApi.post('/users/login', body);
       token.set(response.data.token);
       return response.data;
     } catch (error) {
@@ -18,7 +18,7 @@ export const register = createAsyncThunk(
   'auth/register',
   async (body, { rejectWithValue }) => {
     try {
-      const response = await publicApi.post('/users/signup', body);
+      const response = await privatApi.post('/users/signup', body);
       token.set(response.data.token);
       return response.data;
     } catch (error) {
