@@ -6,7 +6,7 @@ import { selectIsAuth } from 'redax/auth/authSelector';
 import { PrivateRout } from './PrivateRout/PrivateRout';
 import { PublicRout } from './PublicRout/PublicRout';
 import { useEffect } from 'react';
-import { getUser, logOut } from 'redax/auth/authOperation';
+import { getUser } from 'redax/auth/authOperation';
 import { Phonebook } from 'pages/Contacts';
 import UserMenu from './UserMenu';
 // import { token } from 'redax/http';
