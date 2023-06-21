@@ -42,7 +42,7 @@ const authSlice = createSlice({
       })
       .addCase(getUser.fulfilled, (state, { payload }) => {
         state.isAuth = true;
-        state.user = payload.user;
+        state.user = payload;
       })
       .addCase(getUser.rejected, () => initialState)
       .addCase(logOut.fulfilled, () => initialState);

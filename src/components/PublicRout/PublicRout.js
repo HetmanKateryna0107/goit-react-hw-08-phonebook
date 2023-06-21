@@ -1,10 +1,10 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Navigate, Outlet } from 'react-router-dom';
-import { selectIsAuth } from 'redax/auth/authSelector';
+import { selectToken } from 'redax/auth/authSelector';
 
 export const PublicRout = () => {
-  const isAuth = useSelector(selectIsAuth);
+  const token = useSelector(selectToken);
 
-  return isAuth ? <Navigate to={'/contacts'} /> : <Outlet />;
+  return token ? <Navigate to={'/contacts'} /> : <Outlet />;
 };
